@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Soap Games</title>
+
+  <style>
+    :root {
+      --bg: #0b0b0d;
+      --accent: #9b5cff;
+      --text: #f5f5f5;
+      --muted: #9a9a9a;
+      --card: #16161a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 11, 13, 0.9);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      border-bottom: 1px solid #222;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
+    header {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background:
+        radial-gradient(circle at top, #1a1a25, transparent 60%),
+        linear-gradient(135deg, #000, #111);
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    header h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    header .cta {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    header .cta:hover {
+      background: var(--accent);
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    /* MAIN */
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    section {
+      margin-bottom: 100px;
+      animation: slideUp 0.8s ease both;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      display: block;
+      margin-top: 8px;
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #222;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 40px rgba(155, 92, 255, 0.2);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid #222;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE NAV */
+    @media (max-width: 600px) {
+      nav div.links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">BLACK SOAP GAMES</div>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#games">Games</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Black Soap Games</h1>
+    <p>
+      An independent game studio crafting bold worlds, strange stories,
+      and unforgettable experiences.
+    </p>
+    <a href="#games"><button class="cta">Explore Games</button></a>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        Black Soap Games is an indie studio driven by creativity, experimentation,
+        and a love for games that take risks. We focus on atmosphere, mechanics,
+        and stories that stick with you.
+      </p>
+    </section>
+
+    <section id="games">
+      <h2>Our Games</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Untitled Project</h3>
+          <p>
+            A dark, stylish experience currently in development.
+            More details coming soon.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Prototype Lab</h3>
+          <p>
+            Experimental concepts, weird mechanics, and playable ideas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Want to collaborate or follow development?
+        Reach out and stay connected.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Black Soap Games · All Rights Reserved
+  </footer>
+
+</body>
+</html>
